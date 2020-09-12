@@ -1,4 +1,4 @@
-# fro
+# plantillaVue
 
 ## Project setup
 ```
