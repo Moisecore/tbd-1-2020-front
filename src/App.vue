@@ -1,14 +1,15 @@
 <template>
   <v-app id="inspire">
-    <h1>Holi</h1>
-    <router-view>
-    </router-view>
+    <Principal></Principal>
   </v-app>
 </template>
 
 
+
 <script>
+  import Principal from "@/components/principal";
   export default {
+    components: {Principal}
   }
 
 </script>
