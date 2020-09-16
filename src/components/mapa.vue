@@ -6,6 +6,14 @@
 import 'leaflet/dist/leaflet';
 import 'leaflet/dist/leaflet.css';
 
+//var icon = require('leaflet/dist/images/marker-icon.png');
+
+/*var LeafIcon = L.Icon.extend({
+    options: {iconSize: [25,41], iconAnchor: [12,41], popupAnchor: [-3,-4]}
+})*/
+//var myIcon = new LeafIcon({iconUrl: icon});
+
+/*import axios from 'axios';*/
 
 
 export default {
@@ -14,12 +22,12 @@ export default {
     return {
       mymap: null,
       latitud: null,
-      longitud: null
+      longitud: null,
     }
   },
-  /*mounted: function(){
+  mounted: function(){
     let _this = this;
-    this.mymap = L.map('mapid').setView([-38.719, -72.478], 7);
+    this.mymap = L.map('mapid').setView([-33.507, -70.611], 7);
 
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
@@ -30,7 +38,7 @@ export default {
       _this.latitud = e.latlng.lat;
       _this.longitud = e.latlng.lng;
     })
-  }*/
+  }
   /*created: () => ({
 
     var marker = L.marker([-51.760928, -72.482996]).addTo(mymap);
@@ -62,6 +70,6 @@ export default {
 <style scoped>
 #mapid {
   height: 400px;
-  /*  width:200px;*/
+  width:1000px;
 }
 </style>
