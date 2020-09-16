@@ -70,8 +70,11 @@
             </v-tooltip>
           </v-col>
         </v-row>
+        <Mapa></Mapa>
+        askjdalksjdlaksjdas
       </v-container>
     </v-main>
+    
     <div v-if= "mapFlag">
       mapflag
     </div>
@@ -93,9 +96,10 @@
 </template>
 
 <script>
-
+import Mapa from "@/components/mapa";
 export default {
   name: "principal",
+  components: {Mapa},
   props: {
     source: String,
   },
