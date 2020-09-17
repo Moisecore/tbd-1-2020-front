@@ -11,7 +11,7 @@
             <v-icon>mdi-map-marker-multiple</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Mapita {{mapFlag}}</v-list-item-title>
+            <v-list-item-title>Mapita </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link v-on:click= "manejarSeleccion('voluntarios')">
@@ -19,7 +19,7 @@
             <v-icon>mdi-cow</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Habilidades voluntarios {{habFlag}}</v-list-item-title>
+            <v-list-item-title>Habilidades voluntarios </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link v-on:click= "manejarSeleccion('crudVol')">
@@ -27,7 +27,7 @@
             <v-icon>mdi-folder-outline</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>CRUD Voluntario {{volFlag}}</v-list-item-title>
+            <v-list-item-title>CRUD Voluntario </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link v-on:click= "manejarSeleccion('crudHab')">
@@ -35,7 +35,7 @@
             <v-icon>mdi-folder-outline</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>CRUD Habilidad {{haFlag}}</v-list-item-title>
+            <v-list-item-title>CRUD Habilidad </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link v-on:click= "manejarSeleccion('crud')">
@@ -43,7 +43,7 @@
             <v-icon>mdi-folder-outline</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>CRUD Vol-Hab {{volhabFlag}}</v-list-item-title>
+            <v-list-item-title>CRUD Vol-Hab </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
