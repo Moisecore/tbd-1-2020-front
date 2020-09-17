@@ -1,7 +1,7 @@
 <template>
   <v-data-table
       :headers="headers"
-      :items="desserts"
+      :items="voluntarios"
       :single-expand="singleExpand"
       :expanded.sync="expanded"
       item-key="name"
@@ -31,117 +31,46 @@ export default {
       singleExpand: false,
       headers: [
         {
-          text: 'Dessert (100g serving)',
+          text: 'Nombre',
           align: 'start',
           sortable: false,
           value: 'name',
         },
-        { text: 'Calories', value: 'calories' },
-        { text: 'Fat (g)', value: 'fat' },
-        { text: 'Carbs (g)', value: 'carbs' },
-        { text: 'Protein (g)', value: 'protein' },
-        { text: 'Iron (%)', value: 'iron' },
-        { text: '', value: 'data-table-expand' },
+        { text: '', sortable: false, value: 'data-table-expand' },
       ],
-      desserts: [
+      voluntarios: [
         {
-          name: 'Frozen Yogurt',
-          calories: 159,
-          fat: 6.0,
-          carbs: 24,
-          protein: 4.0,
-          iron: '1%',
-          desc: "Frozz",
+          name: 'Ruben Ramirez',
+          desc: "Carpintero, Conductor de maquinaria pesada",
         },
         {
-          name: 'Ice cream sandwich',
-          calories: 237,
-          fat: 9.0,
-          carbs: 37,
-          protein: 4.3,
-          iron: '1%',
-          desc: "Icee",
+          name: 'Marco de los Andes',
+          desc: "Montañista, Salvavidas",
         },
         {
-          name: 'Eclair',
-          calories: 262,
-          fat: 16.0,
-          carbs: 23,
-          protein: 6.0,
-          iron: '7%',
-          desc: "Eclaireclaire",
+          name: 'Pepe Cortisona',
+          desc: "Productor de alimentos",
         },
         {
-          name: 'Cupcake',
-          calories: 305,
-          fat: 3.7,
-          carbs: 67,
-          protein: 4.3,
-          iron: '8%',
-          desc: "Q-kake",
+          name: 'Carlos Diaz',
+          desc: "Bombero",
         },
         {
-          name: 'Gingerbread',
-          calories: 356,
-          fat: 16.0,
-          carbs: 49,
-          protein: 3.9,
-          iron: '16%',
-          desc: "Ginger-Shrek",
+          name: 'Ramon Alarcon',
+          desc: "Experiencia en senderismo",
         },
         {
-          name: 'Jelly bean',
-          calories: 375,
-          fat: 0.0,
-          carbs: 94,
-          protein: 0.0,
-          iron: '0%',
-          desc: "Jelly-Dolphin",
+          name: 'Leandro Dominguez',
+          desc: "Ingeniero en construccion, primeros auxilios",
         },
         {
-          name: 'Lollipop',
-          calories: 392,
-          fat: 0.2,
-          carbs: 98,
-          protein: 0,
-          iron: '2%',
-          desc: "Lolicucked",
-        },
-        {
-          name: 'Honeycomb',
-          calories: 408,
-          fat: 3.2,
-          carbs: 87,
-          protein: 6.5,
-          iron: '45%',
-          desc: "Miel Gibson",
-        },
-        {
-          name: 'Donut',
-          calories: 452,
-          fat: 25.0,
-          carbs: 51,
-          protein: 4.9,
-          iron: '22%',
-          desc: "DonKin Kon",
-        },
-        {
-          name: 'KitKat',
-          calories: 518,
-          fat: 26.0,
-          carbs: 65,
-          protein: 7,
-          iron: '6%',
-          desc: "KIH-KAH",
+          name: 'Jessie James',
+          desc: "Trabajo en equipo, conocimientos de administracion de bodega",
         },
       ],
-    }
-  },
-  methods: {
-    hiceClick: function(){
-      this.console.log("hice click")
     }
   }
+
 }
 </script>
 

@@ -11,7 +11,7 @@
             <v-icon>mdi-map-marker-multiple</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Mapita </v-list-item-title>
+            <v-list-item-title>Mapa de voluntariado </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link v-on:click= "manejarSeleccion('voluntarios')">
@@ -110,7 +110,7 @@ import Buscar from "@/components/buscar";
 export default {
   name: "principal",
   components: {
-    CrudV, Mapa, Buscar, //CrudV, CrudH, CrudVH,
+     Mapa, Buscar, //CrudV, CrudH, CrudVH,
   },
   props: {
     source: String,
