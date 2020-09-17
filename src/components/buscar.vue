@@ -1,33 +1,25 @@
 <template>
-  <div>
-    <v-toolbar flat color="white">
-      <v-toolbar-title>Expandable Table</v-toolbar-title>
-      <v-spacer></v-spacer>
-
-    </v-toolbar>
-    <v-data-table
-        :headers="headers"
-        :items="desserts"
-        :expand="expand"
-        item-key="name"
-    >
-      <template v-slot:items="props">
-        <tr @click="this.props.expanded = true">
-          <td>{{ props.item.name }}</td>
-          <td class="text-xs-right">{{ props.item.calories }}</td>
-          <td class="text-xs-right">{{ props.item.fat }}</td>
-          <td class="text-xs-right">{{ props.item.carbs }}</td>
-          <td class="text-xs-right">{{ props.item.protein }}</td>
-          <td class="text-xs-right">{{ props.item.iron }}</td>
-        </tr>
-      </template>
-      <template v-slot:expand="props">
-        <v-card flat>
-          <v-card-text>{{ props.item.desc }}</v-card-text>
-        </v-card>
-      </template>
-    </v-data-table>
-  </div>
+  <v-data-table
+      :headers="headers"
+      :items="desserts"
+      :single-expand="singleExpand"
+      :expanded.sync="expanded"
+      item-key="name"
+      show-expand
+      class="elevation-1"
+  >
+    <template v-slot:top>
+      <v-toolbar flat>
+        <v-toolbar-title>Habilidades de los Voluntarios</v-toolbar-title>
+        <v-spacer></v-spacer>
+       <!-- <v-switch v-model="singleExpand" label="Single expand" class="mt-2"></v-switch>-->
+      </v-toolbar>
+    </template>
+    <template v-slot:expanded-item="{ headers, item }">
+      <!--AQUI VAN LOS DATOS DEL EXPANDIBLE-->
+      <td :colspan="headers.length">{{ item.desc }}</td>
+    </template>
+  </v-data-table>
 </template>
 
 <script>
@@ -35,19 +27,21 @@ export default {
   name: "buscar",
   data () {
     return {
-      expanded: false,
+      expanded: [],
+      singleExpand: false,
       headers: [
         {
           text: 'Dessert (100g serving)',
-          align: 'left',
+          align: 'start',
           sortable: false,
-          value: 'name'
+          value: 'name',
         },
         { text: 'Calories', value: 'calories' },
         { text: 'Fat (g)', value: 'fat' },
         { text: 'Carbs (g)', value: 'carbs' },
         { text: 'Protein (g)', value: 'protein' },
-        { text: 'Iron (%)', value: 'iron' }
+        { text: 'Iron (%)', value: 'iron' },
+        { text: '', value: 'data-table-expand' },
       ],
       desserts: [
         {
@@ -57,7 +51,7 @@ export default {
           carbs: 24,
           protein: 4.0,
           iron: '1%',
-          desc: "Froz"
+          desc: "Frozz",
         },
         {
           name: 'Ice cream sandwich',
@@ -66,7 +60,7 @@ export default {
           carbs: 37,
           protein: 4.3,
           iron: '1%',
-          desc: "Icee"
+          desc: "Icee",
         },
         {
           name: 'Eclair',
@@ -75,7 +69,7 @@ export default {
           carbs: 23,
           protein: 6.0,
           iron: '7%',
-          desc: "Eclacla"
+          desc: "Eclaireclaire",
         },
         {
           name: 'Cupcake',
@@ -84,7 +78,7 @@ export default {
           carbs: 67,
           protein: 4.3,
           iron: '8%',
-          desc: "Cu-kake"
+          desc: "Q-kake",
         },
         {
           name: 'Gingerbread',
@@ -93,7 +87,7 @@ export default {
           carbs: 49,
           protein: 3.9,
           iron: '16%',
-          desc: "Ginger-Man"
+          desc: "Ginger-Shrek",
         },
         {
           name: 'Jelly bean',
@@ -102,7 +96,7 @@ export default {
           carbs: 94,
           protein: 0.0,
           iron: '0%',
-          desc: "Chilly Jelly"
+          desc: "Jelly-Dolphin",
         },
         {
           name: 'Lollipop',
@@ -111,7 +105,7 @@ export default {
           carbs: 98,
           protein: 0,
           iron: '2%',
-          desc: "Lolly"
+          desc: "Lolicucked",
         },
         {
           name: 'Honeycomb',
@@ -120,7 +114,7 @@ export default {
           carbs: 87,
           protein: 6.5,
           iron: '45%',
-          desc: "Miel Gibson"
+          desc: "Miel Gibson",
         },
         {
           name: 'Donut',
@@ -129,7 +123,7 @@ export default {
           carbs: 51,
           protein: 4.9,
           iron: '22%',
-          desc: "Donaman"
+          desc: "DonKin Kon",
         },
         {
           name: 'KitKat',
@@ -138,9 +132,14 @@ export default {
           carbs: 65,
           protein: 7,
           iron: '6%',
-          desc: "K-laf"
-        }
-      ]
+          desc: "KIH-KAH",
+        },
+      ],
+    }
+  },
+  methods: {
+    hiceClick: function(){
+      this.console.log("hice click")
     }
   }
 }

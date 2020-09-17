@@ -54,7 +54,7 @@
         clipped-left
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Voluntariado</v-toolbar-title>
+      <v-toolbar-title>{{ titulo }}</v-toolbar-title>
     </v-app-bar>
     <v-main>
       <v-container
@@ -83,6 +83,7 @@
 
     <!--<Mapa v-if="mapFlag" ></Mapa> -->
     <v-container v-if="habFlag">
+
       <Buscar></Buscar>
     </v-container>
 
@@ -117,6 +118,7 @@ export default {
     volFlag: null,
     haFlag: null,
     volhabFlag: null,
+    titulo: "Voluntariado",
   }),
   created () {
     this.$vuetify.theme.dark = true
@@ -130,6 +132,7 @@ export default {
           this.volFlag = false;
           this.haFlag = false;
           this.volhabFlag = false;
+          this.titulo = "Mapa de voluntarios";
           break;
         case 'voluntarios':
           this.mapFlag = false;
@@ -137,6 +140,7 @@ export default {
           this.volFlag = false;
           this.haFlag = false;
           this.volhabFlag = false;
+          this.titulo = "Voluntarios: habilidades";
           break;
         case 'crudVol':
           this.mapFlag = false;
@@ -144,6 +148,7 @@ export default {
           this.volFlag = true;
           this.haFlag = false;
           this.volhabFlag = false;
+          this.titulo = "CRUD Voluntario";
           break;
         case 'crudHab':
           this.mapFlag = false;
@@ -151,6 +156,7 @@ export default {
           this.volFlag = false;
           this.haFlag = true;
           this.volhabFlag = false;
+          this.titulo = "CRUD Habilidad";
           break;
         case 'crud':
           this.mapFlag = false;
@@ -158,6 +164,7 @@ export default {
           this.volFlag = false;
           this.haFlag = false;
           this.volhabFlag = true;
+          this.titulo = "CRUD Voluntario-Habilidad";
           break;
         default:
           break;
@@ -168,5 +175,9 @@ export default {
 </script>
 
 <style scoped>
-
+.center {
+  padding: 70px 0;
+  border: 3px solid green;
+  text-align: center;
+}
 </style>
