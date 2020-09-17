@@ -80,21 +80,19 @@
         </v-flex>
       </v-layout>
     </v-container>
-
-    <!--<Mapa v-if="mapFlag" ></Mapa> -->
     <v-container v-if="habFlag">
 
       <Buscar></Buscar>
     </v-container>
 
     <div v-if="volFlag">
-      volflag
+      <!--<CrudV></CrudV>-->
     </div>
     <div v-if="haFlag">
-      haflag
+      <!--<CrudH></CrudH>-->
     </div>
     <div v-if="volhabFlag">
-      volhabflag
+      <!--<CrudVH></CrudVH>-->
     </div>
 
 
@@ -104,9 +102,15 @@
 <script>
 import Mapa from "@/components/mapa";
 import Buscar from "@/components/buscar";
+//import CrudV from "@/components/crudV";
+//import CrudH from "@/components/crudH";
+//import CrudVH from "@/components/crudVH";
+
+
 export default {
   name: "principal",
-  components: { Mapa, Buscar
+  components: {
+    CrudV, Mapa, Buscar, //CrudV, CrudH, CrudVH,
   },
   props: {
     source: String,
