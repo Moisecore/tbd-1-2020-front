@@ -12,7 +12,7 @@
         item-key="name"
     >
       <template v-slot:items="props">
-        <tr @click="props.expanded = !props.expanded">
+        <tr @click="this.props.expanded = true">
           <td>{{ props.item.name }}</td>
           <td class="text-xs-right">{{ props.item.calories }}</td>
           <td class="text-xs-right">{{ props.item.fat }}</td>
@@ -35,7 +35,7 @@ export default {
   name: "buscar",
   data () {
     return {
-      expandir: false,
+      expanded: false,
       headers: [
         {
           text: 'Dessert (100g serving)',

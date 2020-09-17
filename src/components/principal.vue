@@ -6,7 +6,7 @@
         clipped
     >
       <v-list dense>
-        <v-list-item link v-on:click= "aux = 1">
+        <v-list-item link v-on:click= "manejarSeleccion('mapa')">
           <v-list-item-action>
             <v-icon>mdi-map-marker-multiple</v-icon>
           </v-list-item-action>
@@ -14,7 +14,7 @@
             <v-list-item-title>Mapita {{mapFlag}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link v-on:click= "aux = 2">
+        <v-list-item link v-on:click= "manejarSeleccion('voluntarios')">
           <v-list-item-action>
             <v-icon>mdi-cow</v-icon>
           </v-list-item-action>
@@ -22,7 +22,7 @@
             <v-list-item-title>Habilidades voluntarios {{habFlag}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link v-on:click= "aux = 3">
+        <v-list-item link v-on:click= "manejarSeleccion('crudVol')">
           <v-list-item-action>
             <v-icon>mdi-folder-outline</v-icon>
           </v-list-item-action>
@@ -30,7 +30,7 @@
             <v-list-item-title>CRUD Voluntario {{volFlag}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link v-on:click= "aux = 4">
+        <v-list-item link v-on:click= "manejarSeleccion('crudHab')">
           <v-list-item-action>
             <v-icon>mdi-folder-outline</v-icon>
           </v-list-item-action>
@@ -38,7 +38,7 @@
             <v-list-item-title>CRUD Habilidad {{haFlag}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link v-on:click= "aux = 5">
+        <v-list-item link v-on:click= "manejarSeleccion('crud')">
           <v-list-item-action>
             <v-icon>mdi-folder-outline</v-icon>
           </v-list-item-action>
@@ -70,8 +70,6 @@
             </v-tooltip>
           </v-col>
         </v-row>
-        <!--<Mapa></Mapa>
-        askjdalksjdlaksjdas-->
       </v-container>
     </v-main>
 
@@ -127,39 +125,39 @@ export default {
     manejarSeleccion: function(sel){
       switch (sel) {
         case 'mapa':
-          mapFlag: true;
-          habFlag: false;
-          volFlag: false;
-          haFlag: false;
-          volhabFlag: false;
+          this.mapFlag = true;
+          this.habFlag = false;
+          this.volFlag = false;
+          this.haFlag = false;
+          this.volhabFlag = false;
           break;
         case 'voluntarios':
-          mapFlag: false;
-          habFlag: true;
-          volFlag: false;
-          haFlag: false;
-          volhabFlag: false;
+          this.mapFlag = false;
+          this.habFlag = true;
+          this.volFlag = false;
+          this.haFlag = false;
+          this.volhabFlag = false;
           break;
         case 'crudVol':
-          mapFlag: false;
-          habFlag: false;
-          volFlag: true;
-          haFlag: false;
-          volhabFlag: false;
+          this.mapFlag = false;
+          this.habFlag = false;
+          this.volFlag = true;
+          this.haFlag = false;
+          this.volhabFlag = false;
           break;
         case 'crudHab':
-          mapFlag: false;
-          habFlag: false;
-          volFlag: false;
-          haFlag: true;
-          volhabFlag: false;
+          this.mapFlag = false;
+          this.habFlag = false;
+          this.volFlag = false;
+          this.haFlag = true;
+          this.volhabFlag = false;
           break;
         case 'crud':
-          mapFlag: false;
-          habFlag: false;
-          volFlag: false;
-          haFlag: false;
-          volhabFlag: true;
+          this.mapFlag = false;
+          this.habFlag = false;
+          this.volFlag = false;
+          this.haFlag = false;
+          this.volhabFlag = true;
           break;
         default:
           break;
